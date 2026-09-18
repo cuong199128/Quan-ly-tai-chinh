@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sổ Chi Tiêu — Quản lý tài chính cá nhân</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EDF2EA;
+    --paper-light: #F7FAF5;
+    --white: #FFFFFF;
+    --ink: #1B2A22;
+    --ink-soft: #4A5750;
+    --brass: #B8863A;
+    --brass-dark: #96692A;
+    --teal: #2F5D50;
+    --line: #C9D3C4;
+    --line-soft: #DCE4D8;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.55;
+  }
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  header.top{
+    padding:28px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:1.15rem;
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .brand .mark{
+    width:28px;height:28px;
+    border:1.5px solid var(--ink);
+    border-radius:3px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    color:var(--brass-dark);
+  }
+  nav.top-links{
+    margin-top:0;
+  }
+  .hero{
+    padding:72px 0 56px;
+  }
+  .hero .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+    color:var(--brass-dark);
+    letter-spacing:0.02em;
+  }
+  h1{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:clamp(2.1rem, 5vw, 3.2rem);
+    line-height:1.15;
+    margin:14px 0 20px;
+    max-width:14ch;
+  }
+  .hero p.lead{
+    font-size:1.15rem;
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin:0 0 32px;
+  }
+  .cta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 22px;
+    border-radius:4px;
+    font-weight:500;
+    text-decoration:none;
+    font-size:0.98rem;
+    border:1.5px solid transparent;
+  }
+  .btn-primary{
+    background:var(--ink);
+    color:var(--paper-light);
+  }
+  .btn-primary:hover{ background:#0F1911; }
+  .btn-secondary{
+    border-color:var(--ink);
+    color:var(--ink);
+  }
+  .btn-secondary:hover{ background:var(--white); }
+
+  .ledger{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:6px;
+    margin:8px 0 64px;
+    overflow:hidden;
+  }
+  .ledger-head{
+    display:grid;
+    grid-template-columns: 90px 1fr 140px;
+    padding:14px 22px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--line);
+    background:var(--paper-light);
+  }
+  .ledger-row{
+    display:grid;
+    grid-template-columns: 90px 1fr 140px;
+    padding:20px 22px;
+    border-bottom:1px solid var(--line-soft);
+    gap:6px;
+  }
+  .ledger-row:last-child{ border-bottom:none; }
+  .ledger-row .num{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--brass-dark);
+    font-size:0.9rem;
+  }
+  .ledger-row h3{
+    margin:0 0 4px;
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:1.08rem;
+  }
+  .ledger-row p{
+    margin:0;
+    color:var(--ink-soft);
+    font-size:0.95rem;
+  }
+  .ledger-row .platform{
+    font-size:0.85rem;
+    color:var(--teal);
+    text-align:right;
+    align-self:start;
+  }
+
+  section.block{
+    padding:8px 0 56px;
+  }
+  section.block h2{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:1.7rem;
+    margin:0 0 18px;
+  }
+  .rule{
+    border:none;
+    border-top:1px solid var(--line);
+    margin:0 0 48px;
+  }
+  .drive-box{
+    display:flex;
+    gap:24px;
+    align-items:flex-start;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:28px;
+  }
+  .drive-box .icon{
+    flex-shrink:0;
+    width:46px;height:46px;
+    border-radius:50%;
+    border:1.5px solid var(--teal);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--teal);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:1rem;
+  }
+  .drive-box p{ margin:0 0 10px; color:var(--ink-soft); }
+  .drive-box p:last-child{ margin-bottom:0; }
+  .platforms{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:18px;
+  }
+  .platform-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:24px;
+  }
+  .platform-card .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--brass-dark);
+    display:block;
+    margin-bottom:8px;
+  }
+  .platform-card h3{
+    font-family:'Source Serif 4', serif;
+    margin:0 0 8px;
+    font-size:1.2rem;
+  }
+  .platform-card p{ margin:0; color:var(--ink-soft); font-size:0.95rem; }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:32px 0 48px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:12px;
+    font-size:0.9rem;
+    color:var(--ink-soft);
+  }
+  footer a{ color:var(--ink); }
+
+  @media (max-width:640px){
+    .ledger-head, .ledger-row{
+      grid-template-columns: 56px 1fr;
+    }
+    .ledger-row .platform{ grid-column: 1 / -1; text-align:left; margin-top:4px; }
+    .ledger-head span:last-child{ display:none; }
+    .platforms{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top">
+      <span class="mark">S</span>
+      Sổ Chi Tiêu
+    </a>
+  </header>
+
+  <section class="hero" id="top">
+    <span class="eyebrow">QUẢN LÝ TÀI CHÍNH CÁ NHÂN</span>
+    <h1>Ghi lại từng đồng, sao lưu mọi lúc.</h1>
+    <p class="lead">Sổ Chi Tiêu giúp bạn theo dõi thu chi hằng ngày và tự động sao lưu dữ liệu lên Google Drive của chính bạn, dùng được trên cả điện thoại Android và máy tính.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#">Tải cho Android</a>
+      <a class="btn btn-secondary" href="#">Tải cho Desktop</a>
+    </div>
+  </section>
+
+  <div class="ledger" aria-label="Tính năng chính">
+    <div class="ledger-head">
+      <span>Mục</span>
+      <span>Tính năng</span>
+      <span>Nền tảng</span>
+    </div>
+    <div class="ledger-row">
+      <span class="num">01</span>
+      <div>
+        <h3>Ghi chép thu chi</h3>
+        <p>Thêm giao dịch nhanh, phân loại theo danh mục, gắn thẻ và ghi chú cho từng khoản.</p>
+      </div>
+      <span class="platform">Android · Desktop</span>
+    </div>
+    <div class="ledger-row">
+      <span class="num">02</span>
+      <div>
+        <h3>Ngân sách theo tháng</h3>
+        <p>Đặt hạn mức chi tiêu cho từng danh mục và nhận cảnh báo khi sắp vượt ngân sách.</p>
+      </div>
+      <span class="platform">Android · Desktop</span>
+    </div>
+    <div class="ledger-row">
+      <span class="num">03</span>
+      <div>
+        <h3>Báo cáo & biểu đồ</h3>
+        <p>Xem dòng tiền theo tuần, tháng, năm; so sánh chi tiêu giữa các danh mục.</p>
+      </div>
+      <span class="platform">Android · Desktop</span>
+    </div>
+    <div class="ledger-row">
+      <span class="num">04</span>
+      <div>
+        <h3>Sao lưu Google Drive</h3>
+        <p>Toàn bộ dữ liệu được sao lưu vào một tệp riêng trong Google Drive của bạn, có thể khôi phục bất cứ lúc nào.</p>
+      </div>
+      <span class="platform">Android · Desktop</span>
+    </div>
+  </div>
+
+  <section class="block">
+    <h2>Đồng bộ với Google Drive</h2>
+    <div class="drive-box">
+      <span class="icon">GD</span>
+      <div>
+        <p>Sổ Chi Tiêu chỉ tạo và truy cập một tệp sao lưu duy nhất do chính ứng dụng tạo ra trong Google Drive của bạn — không đọc, không xem các tệp khác sẵn có trong tài khoản.</p>
+        <p>Bạn có thể ngắt kết nối và xoá quyền truy cập bất cứ lúc nào trong phần Cài đặt của ứng dụng hoặc trực tiếp từ tài khoản Google của mình.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="block">
+    <h2>Nền tảng hỗ trợ</h2>
+    <div class="platforms">
+      <div class="platform-card">
+        <span class="tag">ANDROID</span>
+        <h3>Điện thoại & máy tính bảng</h3>
+        <p>Ghi chép chi tiêu mọi lúc, đồng bộ ngay khi có kết nối mạng.</p>
+      </div>
+      <div class="platform-card">
+        <span class="tag">DESKTOP</span>
+        <h3>Windows · macOS · Linux</h3>
+        <p>Xem báo cáo chi tiết và quản lý ngân sách trên màn hình lớn.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <footer>
+    <span>© 2026 Sổ Chi Tiêu</span>
+    <span><a href="privacy.html">Chính sách quyền riêng tư</a> · <a href="mailto:support@example.com">support@example.com</a></span>
+  </footer>
+</div>
+
+</body>
+</html>

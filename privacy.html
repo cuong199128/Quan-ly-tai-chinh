@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chính sách quyền riêng tư — Sổ Chi Tiêu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EDF2EA;
+    --paper-light: #F7FAF5;
+    --white: #FFFFFF;
+    --ink: #1B2A22;
+    --ink-soft: #4A5750;
+    --brass: #B8863A;
+    --brass-dark: #96692A;
+    --teal: #2F5D50;
+    --line: #C9D3C4;
+    --line-soft: #DCE4D8;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.65;
+  }
+  .wrap{
+    max-width:740px;
+    margin:0 auto;
+    padding:0 28px 80px;
+  }
+  header.top{
+    padding:28px 0;
+    border-bottom:1px solid var(--line);
+    margin-bottom:8px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:1.1rem;
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .brand .mark{
+    width:26px;height:26px;
+    border:1.5px solid var(--ink);
+    border-radius:3px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    color:var(--brass-dark);
+  }
+  .doc-head{
+    padding:44px 0 28px;
+  }
+  .doc-head .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.8rem;
+    color:var(--brass-dark);
+  }
+  h1{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:2.1rem;
+    margin:12px 0 8px;
+  }
+  .updated{
+    color:var(--ink-soft);
+    font-size:0.92rem;
+  }
+  .doc{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:8px 40px 20px;
+  }
+  section.item{
+    padding:26px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  section.item:last-child{ border-bottom:none; }
+  section.item h2{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:1.25rem;
+    margin:0 0 12px;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  section.item h2 .n{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+    color:var(--brass-dark);
+    font-weight:500;
+  }
+  section.item p{
+    margin:0 0 12px;
+    color:var(--ink-soft);
+  }
+  section.item p:last-child{ margin-bottom:0; }
+  section.item ul{
+    margin:0 0 12px;
+    padding-left:20px;
+    color:var(--ink-soft);
+  }
+  section.item li{ margin-bottom:6px; }
+  section.item strong{ color:var(--ink); }
+  .scope-box{
+    background:var(--paper-light);
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:16px 18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+    color:var(--teal);
+    margin:14px 0;
+  }
+  footer{
+    padding-top:32px;
+    font-size:0.9rem;
+    color:var(--ink-soft);
+  }
+  footer a{ color:var(--ink); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="index.html">
+      <span class="mark">S</span>
+      Sổ Chi Tiêu
+    </a>
+  </header>
+
+  <div class="doc-head">
+    <span class="eyebrow">TÀI LIỆU PHÁP LÝ</span>
+    <h1>Chính sách quyền riêng tư</h1>
+    <p class="updated">Cập nhật lần cuối: 18 tháng 9 năm 2026</p>
+  </div>
+
+  <div class="doc">
+
+    <section class="item">
+      <h2><span class="n">01</span> Giới thiệu</h2>
+      <p>Sổ Chi Tiêu ("ứng dụng", "chúng tôi") là ứng dụng quản lý tài chính cá nhân dành cho Android và máy tính (Windows, macOS, Linux). Chính sách này giải thích chúng tôi thu thập, sử dụng và bảo vệ dữ liệu của bạn như thế nào, đặc biệt là khi bạn kết nối tài khoản Google để sao lưu dữ liệu lên Google Drive.</p>
+    </section>
+
+    <section class="item">
+      <h2><span class="n">02</span> Dữ liệu chúng tôi thu thập</h2>
+      <p>Ứng dụng lưu trữ các dữ liệu sau <strong>trên thiết bị của bạn</strong>:</p>
+      <ul>
+        <li>Giao dịch thu, chi bạn nhập (số tiền, danh mục, ngày, ghi chú)</li>
+        <li>Ngân sách và hạn mức chi tiêu bạn thiết lập</li>
+        <li>Cài đặt và tuỳ chọn cá nhân trong ứng dụng</li>
+      </ul>
+      <p>Chúng tôi <strong>không thu thập</strong> các dữ liệu này về máy chủ của mình. Dữ liệu chỉ rời khỏi thiết bị khi bạn chủ động bật tính năng sao lưu lên Google Drive.</p>
+    </section>
+
+    <section class="item">
+      <h2><span class="n">03</span> Cách chúng tôi dùng Google Drive</h2>
+      <p>Khi bạn đăng nhập bằng tài khoản Google và bật sao lưu, ứng dụng yêu cầu quyền truy cập Google Drive ở phạm vi giới hạn nhất:</p>
+      <div class="scope-box">drive.file — chỉ truy cập tệp do ứng dụng này tạo ra</div>
+      <p>Với phạm vi này, ứng dụng <strong>chỉ có thể nhìn thấy và chỉnh sửa một tệp sao lưu duy nhất</strong> mà chính nó tạo ra trong Drive của bạn. Ứng dụng không có quyền xem, đọc hay chỉnh sửa bất kỳ tệp, thư mục hay dữ liệu nào khác đã có sẵn trong tài khoản Google Drive của bạn.</p>
+      <p>Tệp sao lưu này được dùng để: lưu trữ dữ liệu dự phòng, và khôi phục dữ liệu khi bạn cài đặt lại ứng dụng hoặc đổi sang thiết bị khác.</p>
+    </section>
+
+    <section class="item">
+      <h2><span class="n">04</span> Chia sẻ dữ liệu</h2>
+      <p>Chúng tôi <strong>không bán, không chia sẻ và không cho bên thứ ba nào khác truy cập</strong> vào dữ liệu tài chính hay dữ liệu Google Drive của bạn. Dữ liệu không được dùng cho mục đích quảng cáo dưới bất kỳ hình thức nào.</p>
+      <p>Việc sử dụng và chuyển giao dữ liệu nhận được từ Google API của ứng dụng tuân thủ <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Chính sách dữ liệu người dùng của Dịch vụ API Google (Google API Services User Data Policy)</a>, bao gồm cả các yêu cầu về Sử dụng hạn chế (Limited Use).</p>
+    </section>
+
+    <section class="item">
+      <h2><span class="n">05</span> Lưu trữ và xoá dữ liệu</h2>
+      <p>Dữ liệu trên thiết bị sẽ bị xoá khi bạn gỡ cài đặt ứng dụng. Tệp sao lưu trên Google Drive thuộc quyền sở hữu của bạn — bạn có thể xoá tệp này trực tiếp trong Google Drive, hoặc thu hồi quyền truy cập của ứng dụng bất cứ lúc nào tại <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">trang quản lý quyền truy cập của Google</a>.</p>
+      <p>Khi bạn thu hồi quyền truy cập, ứng dụng sẽ ngừng đồng bộ nhưng dữ liệu đã sao lưu vẫn còn trong Drive của bạn cho đến khi bạn tự xoá.</p>
+    </section>
+
+    <section class="item">
+      <h2><span class="n">06</span> Bảo mật</h2>
+      <p>Dữ liệu truyền giữa ứng dụng và Google Drive được mã hoá qua kết nối HTTPS. Chúng tôi không lưu trữ mật khẩu hay thông tin đăng nhập Google của bạn — việc xác thực được thực hiện hoàn toàn qua giao thức OAuth 2.0 chuẩn của Google.</p>
+    </section>
+
+    <section class="item">
+      <h2><span class="n">07</span> Quyền của bạn</h2>
+      <ul>
+        <li>Xem, chỉnh sửa hoặc xoá dữ liệu trực tiếp trong ứng dụng bất cứ lúc nào</li>
+        <li>Ngắt kết nối Google Drive trong phần Cài đặt của ứng dụng</li>
+        <li>Yêu cầu hỗ trợ hoặc đặt câu hỏi về dữ liệu qua email bên dưới</li>
+      </ul>
+    </section>
+
+    <section class="item">
+      <h2><span class="n">08</span> Thay đổi chính sách</h2>
+      <p>Chúng tôi có thể cập nhật chính sách này khi cần. Ngày cập nhật gần nhất luôn hiển thị ở đầu trang. Việc tiếp tục sử dụng ứng dụng sau khi có thay đổi đồng nghĩa bạn chấp nhận chính sách mới.</p>
+    </section>
+
+    <section class="item">
+      <h2><span class="n">09</span> Liên hệ</h2>
+      <p>Nếu có câu hỏi về chính sách này hoặc cách chúng tôi xử lý dữ liệu, vui lòng liên hệ:</p>
+      <p><a href="mailto:support@example.com">support@example.com</a></p>
+    </section>
+
+  </div>
+
+  <footer>
+    <a href="index.html">← Về trang chủ</a>
+  </footer>
+</div>
+
+</body>
+</html>
