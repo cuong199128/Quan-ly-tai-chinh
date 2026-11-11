@@ -1,0 +1,73 @@
+# ===== Linh tinh =====
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store              # File rác của macOS
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# ===== IntelliJ / Android Studio =====
+*.iml
+*.ipr
+*.iws
+.idea/                 # Cấu hình riêng của IDE, không cần chia sẻ
+
+# ===== VS Code =====
+.vscode/               # Cấu hình riêng của VS Code (bỏ dòng này nếu muốn chia sẻ settings chung)
+
+# ===== Flutter / Dart =====
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/            # File tự sinh khi chạy lệnh flutter/dart
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/                # Thư mục build (apk, ipa, exe...) — luôn build lại từ source, không commit
+generated_plugin_registrant.dart
+lib/generated_plugin_registrant.dart
+
+# ===== Kết quả biên dịch / gỡ lỗi =====
+app.*.symbols          # File symbol dùng để giải mã crash log
+app.*.map.json         # File map dùng khi code bị obfuscate
+
+# ===== Android =====
+/android/app/debug
+/android/app/profile
+/android/app/release
+/android/local.properties      # Đường dẫn SDK/NDK riêng trên máy mỗi người
+/android/**/gradle-wrapper.jar
+/android/.gradle
+key.properties                 # Thông tin ký ứng dụng (keystore) — TUYỆT ĐỐI không commit
+*.jks
+*.keystore
+
+# ===== iOS / macOS =====
+/ios/Flutter/Flutter.framework
+/ios/Flutter/Flutter.podspec
+/ios/Pods/
+/ios/.symlinks/
+**/xcuserdata/
+**/*.xcworkspace/xcuserdata/
+
+# ===== Windows / Linux (desktop) =====
+/windows/flutter/generated_plugin_registrant.cc
+/windows/flutter/generated_plugin_registrant.h
+/windows/flutter/generated_plugins.cmake
+/linux/flutter/generated_plugin_registrant.cc
+/linux/flutter/generated_plugin_registrant.h
+/linux/flutter/generated_plugins.cmake
+
+# ===== Biến môi trường / thông tin nhạy cảm =====
+.env
+*.env                   # Chứa API key, mật khẩu... không commit lên git
+
+# ===== Coverage (kết quả test) =====
+coverage/
+
+# ===== Ngoại lệ (không bỏ qua các file này dù khớp rule ở trên) =====
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
