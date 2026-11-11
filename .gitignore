@@ -47,4 +47,19 @@ app.*.map.json
 # Widget Preview related
 .widget_preview/
 *windows_auth_service.dart
+
+# Secrets
+.env
+.env.*
+*.jks
+*.keystore
+key.properties
+android/key.properties
+google-services.json
+GoogleService-Info.plist
 client_secret_*.json
+
+**/build/
+# Flutter generated (Windows)
+**/ephemeral/
+*.pdb
